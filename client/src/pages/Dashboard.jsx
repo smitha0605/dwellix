@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import api from '../api/axios';
 
 function Dashboard() {
@@ -37,8 +38,11 @@ function Dashboard() {
       )}
 
       {user?.role === 'host' && (
-        <p style={{ color: 'green' }}>✅ You're a host — you can create listings.</p>
-      )}
+  <>
+    <p style={{ color: 'green' }}>✅ You're a host — you can create listings.</p>
+    <Link to="/create-listing">Create a Listing</Link>
+  </>
+)}
 
       <br /><br />
       <button onClick={handleLogout}>Logout</button>
