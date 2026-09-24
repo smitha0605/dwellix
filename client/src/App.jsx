@@ -1,3 +1,5 @@
+import MyListings from './pages/MyListings';
+import MyBookings from './pages/MyBookings';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -17,6 +19,8 @@ function App() {
         <Route path="/listings" element={<Listings />} />
         <Route path="/listings/:id" element={<PropertyDetail />} />
         <Route path="/create-listing" element={<CreateListing />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
+        <Route path="/my-listings" element={<MyListings />} />
       </Routes>
     </BrowserRouter>
   );

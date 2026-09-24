@@ -63,3 +63,17 @@ exports.getPropertyById = async (req, res) => {
     return res.status(500).json({ message: 'Something went wrong' });
   }
 };
+// GET /api/properties/my/listings — host's own properties
+exports.getMyProperties = async (req, res) => {
+  try {
+    const hostId = req.user.id;
+    const result = await pool.query(
+      `SELECT * FROM properties WHERE host_id = $1 ORDER BY created_at DESC`,
+      [hostId]
+    );
+    return res.status(200).json({ properties: result.rows });
+  } catch (err) {
+    console.error('Get my properties error:', err.message);
+    return res.status(500).json({ message: 'Something went wrong' });
+  }
+};
