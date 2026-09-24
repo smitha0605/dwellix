@@ -10,6 +10,8 @@ const userRoutes = require('./routes/users');
 app.use('/api/users', userRoutes);
 const propertyRoutes = require('./routes/properties');
 app.use('/api/properties', propertyRoutes);
+const bookingRoutes = require('./routes/bookings');
+app.use('/api/bookings', bookingRoutes);
 const PORT = 5000;
 
 app.get('/', (req, res) => {
