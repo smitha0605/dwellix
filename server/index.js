@@ -8,6 +8,8 @@ const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 const userRoutes = require('./routes/users');
 app.use('/api/users', userRoutes);
+const propertyRoutes = require('./routes/properties');
+app.use('/api/properties', propertyRoutes);
 const PORT = 5000;
 
 app.get('/', (req, res) => {
